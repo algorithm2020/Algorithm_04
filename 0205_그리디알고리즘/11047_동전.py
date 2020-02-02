@@ -11,6 +11,8 @@ for i in a[-1:-(len(a)+1):-1]:
     if i > k:
         continue
     result += k//i
+    
+    # 최종적으로 k가 0이 되지 않으면, 그리디 알고리즘으로 이 문제를 풀 수 없다.
     k %= i
-
+    
 print(result)
