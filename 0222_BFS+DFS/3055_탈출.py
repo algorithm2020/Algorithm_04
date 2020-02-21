@@ -11,9 +11,9 @@ for _ in range(n):
     a.append(''.join(map(str, input())))
 dx, dy = (-1, 1, 0, 0), (0, 0, -1, 1)
 
-#물이 차는 시간
+# water[x][y] : x,y 지점에서 물이 차는 시간
 water = [[-1] * m for _ in range(n)]
-# dist[x][y] = x,y 지점에 방문한 시간(분)
+# dist[x][y] : x,y 지점에 방문한 시간(분)
 # -1 이면 아직 방문 안 한 것
 dist = [[-1] * m for _ in range(n)]
 
