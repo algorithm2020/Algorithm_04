@@ -9,7 +9,7 @@ dist = [-1] * max_int
 q = deque()
 q.append(n)
 check[n] = True
-# 걸리는 시간(초)
+# 위치 n까지 가는데 걸리는 시간(초)
 dist[n] = 0
 
 
