@@ -10,6 +10,7 @@
     # level을 결과에 저장
     # 결과중 최소값이 최종 결과
 
+#참고링크 : https://rebas.kr/689
 from collections import deque
 
 n = int(input())
