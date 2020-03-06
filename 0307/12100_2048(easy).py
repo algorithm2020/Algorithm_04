@@ -8,6 +8,7 @@ answer, q = 0, deque()
 
 
 def get(i, j):
+    # 방향 기준부터(오른쪽이면 제일 오른쪽값부터) 큐에 값을 넣는다.
     if board[i][j]:  # 0이 아닌 값이라면
         q.append(board[i][j])  # queue에 board의 값을 넣는다.
         board[i][j] = 0  # 처리가 된 빈 자리는 0으로 값 업데이트
@@ -42,12 +43,12 @@ def move(k):
         for i in range(n):
             for j in range(n):
                 get(i, j)
-            merge(i, 0, 0, 1)  # column 인덱스 증가 왼쪽으로 이동
+            merge(i, 0, 0, 1)  # column 인덱스 증가하면서 왼쪽으로 이동
     else:  # 오른쪽으로 이동, column index는 n-1
         for i in range(n):
             for j in range(n - 1, -1, -1):
                 get(i, j)
-            merge(i, n - 1, 0, -1)  # column 인덱스 감소 오른쪽으로 이동
+            merge(i, n - 1, 0, -1)  # column 인덱스 감소하면서 오른쪽으로 이동
 
 
 def solve(count):
@@ -60,8 +61,8 @@ def solve(count):
 
     for k in range(4):  # 4방향으로 움직인다.
         move(k)  # 움직인다.
-        solve(count + 1)  # 재귀적으로 호출한다.
-        board = [x[:] for x in b]
+        solve(count + 1)  # 재귀적으로 호출한다. ** ㅠㅠ 재귀
+        board = [x[:] for x in b] # 원래 보드로 원복한다.
 
 
 solve(0)
