@@ -35,6 +35,8 @@ def cd(r,c):
 
 
 def clean():
+    global ans
+
     while q:
         r, c, d = q.popleft()
 
@@ -56,6 +58,9 @@ def clean():
                 if cd(r,c): #네 방향 모두 청소가 이미 되어있거나 벽인 경우
                     if room[r+dx[B[d]]][c+dy[B[d]]] == 1:# 후진 불가능하면 종료
                         return
+                    else: #후진 가능한 경우
+                        r = r+dx[B[d]]
+                        c = c+dy[B[d]]
 
 
 clean()
