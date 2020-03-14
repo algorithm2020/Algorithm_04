@@ -1,6 +1,6 @@
 def solution(record):
     answer = []
-    id_nic={}
+    id_nic={} # {"uid":"nickname"}
 
    
     # uid / 닉네임 딕셔너리 생성
